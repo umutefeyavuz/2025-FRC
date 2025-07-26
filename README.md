@@ -84,10 +84,29 @@ Parameterized command that moves the elevator to a specific setpoint. Used with 
 - **Joystick/Yoke** used for controlling swerve drive.
 - **Preset buttons** for sending the elevator to predefined positions.
 
+## How It Works
+
+This project integrates a swerve drive base with a PID-controlled elevator subsystem. The elevator is managed using closed-loop control with `TrapezoidProfileSubsystem`, allowing smooth and safe vertical movement. The swerve system is based on four independent modules, each controlled with its own turning and driving motor, and managed via `SwerveModule` and `SwerveSubsystem` classes. Field-oriented control and trajectory alignment are handled through WPILib's built-in kinematics and odometry support.
+
+## Learning Outcomes
+
+While working on this project, I focused on understanding:
+- How WPILib’s command-based structure organizes robot logic cleanly.
+- The construction of modular and reusable subsystems (e.g., elevator, swerve).
+- How PID controllers and trapezoidal motion profiles are used for precise actuator control.
+- The use of enums, builder patterns, and configuration classes to reduce repetition and increase readability.
+
+Even though I was not the original author of this robot codebase, I carefully studied and modified the system to gain a deeper understanding of FRC programming practices.
+
+
+## Future Improvements
+
+- Add a simple manual override system to the elevator using joystick buttons.
+- Visualize elevator position via Shuffleboard or SmartDashboard.
+- Integrate AprilTag vision alignment for autonomous positioning.
+
+
 ## Author
 
 Created and maintained by **Umut Efe Yavuz** for learning, competition preparation, and contribution to the FRC community.
 
-## License
-
-This project is open source and provided for educational purposes. Feel free to use and adapt it under the [MIT License](https://opensource.org/licenses/MIT).
